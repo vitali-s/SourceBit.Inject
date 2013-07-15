@@ -9,7 +9,7 @@ namespace SoureBit.Inject.Test
         public void Register_ForAssembliesList_ShouldNotBeCalled()
         {
             // Assemblies names
-            InjectContainer.Register();
+            InjectContainer.Container.Register();
         }
 
         [Fact]

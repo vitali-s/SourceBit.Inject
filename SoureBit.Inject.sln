@@ -1,13 +1,9 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 2012
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SoureBit.Inject.Test", "SoureBit.Inject.Test\SoureBit.Inject.Test.csproj", "{7A6E6F11-16B6-4D1B-910B-B193D44F04B1}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SoureBit.Infrastructure", "SoureBit.Infrastructure\SoureBit.Infrastructure.csproj", "{2DE3FB1F-2C70-4583-9955-B89DA69BFD47}"
-EndProject
+# Visual Studio 2013
+VisualStudioVersion = 12.0.20617.1 PREVIEW
+MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SoureBit.Infrastructure.Inject", "SoureBit.Infrastructure.Inject\SoureBit.Infrastructure.Inject.csproj", "{696DA956-C876-4852-8ABF-E52653F27374}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SoureBit.Infrastructure.Bus", "SoureBit.Infrastructure.Bus\SoureBit.Infrastructure.Bus.csproj", "{9938C9B1-6F92-4C33-8346-47DD6AA59395}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,22 +11,10 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{7A6E6F11-16B6-4D1B-910B-B193D44F04B1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{7A6E6F11-16B6-4D1B-910B-B193D44F04B1}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{7A6E6F11-16B6-4D1B-910B-B193D44F04B1}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{7A6E6F11-16B6-4D1B-910B-B193D44F04B1}.Release|Any CPU.Build.0 = Release|Any CPU
-		{2DE3FB1F-2C70-4583-9955-B89DA69BFD47}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{2DE3FB1F-2C70-4583-9955-B89DA69BFD47}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{2DE3FB1F-2C70-4583-9955-B89DA69BFD47}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{2DE3FB1F-2C70-4583-9955-B89DA69BFD47}.Release|Any CPU.Build.0 = Release|Any CPU
 		{696DA956-C876-4852-8ABF-E52653F27374}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{696DA956-C876-4852-8ABF-E52653F27374}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{696DA956-C876-4852-8ABF-E52653F27374}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{696DA956-C876-4852-8ABF-E52653F27374}.Release|Any CPU.Build.0 = Release|Any CPU
-		{9938C9B1-6F92-4C33-8346-47DD6AA59395}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{9938C9B1-6F92-4C33-8346-47DD6AA59395}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{9938C9B1-6F92-4C33-8346-47DD6AA59395}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{9938C9B1-6F92-4C33-8346-47DD6AA59395}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
