@@ -241,6 +241,7 @@
       </Rules>
       <AnalyzerSettings>
         <CollectionProperty Name="Hungarian">
+		  <Value>as</Value>
           <Value>db</Value>
           <Value>ip</Value>
           <Value>is</Value>
