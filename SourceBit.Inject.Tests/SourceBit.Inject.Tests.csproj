@@ -37,6 +37,9 @@
     <Reference Include="nunit.framework">
       <HintPath>..\packages\NUnit.2.6.3\lib\nunit.framework.dll</HintPath>
     </Reference>
+    <Reference Include="Ploeh.AutoFixture">
+      <HintPath>..\packages\AutoFixture.3.12.1\lib\net40\Ploeh.AutoFixture.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
@@ -46,11 +49,23 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AssemblyRegistrationTests.cs" />
     <Compile Include="ContainerTests.cs" />
     <Compile Include="CustomResolvingStrategyTests.cs" />
     <Compile Include="Data\CustomResolvingStrategy.cs" />
+    <Compile Include="Data\GenericService.cs" />
+    <Compile Include="Data\IGenericService.cs" />
+    <Compile Include="Data\ISimpleGenericInterface.cs" />
+    <Compile Include="Data\ISimpleGenericService.cs" />
+    <Compile Include="Data\ISimpleGenericServiceWithOneSimpleDependency.cs" />
     <Compile Include="Data\ISimpleService.cs" />
+    <Compile Include="Data\ISimpleServiceWithOneSimpleDependency.cs" />
+    <Compile Include="Data\SimpleGenericService.cs" />
+    <Compile Include="Data\SimpleGenericServiceWithOneSimpleDependency.cs" />
+    <Compile Include="Data\SimpleModel.cs" />
     <Compile Include="Data\SimpleService.cs" />
+    <Compile Include="Data\SimpleServiceWithOneSimpleDependency.cs" />
+    <Compile Include="InstantiationTests.cs" />
     <Compile Include="PerDependencyResolvingStrategyTests.cs" />
     <Compile Include="PerformanceTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -58,6 +73,7 @@
       <Link>Properties\SolutionInfo.cs</Link>
     </Compile>
     <Compile Include="SingleInstanceResolvingStrategyTests.cs" />
+    <Compile Include="UnitTest.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />

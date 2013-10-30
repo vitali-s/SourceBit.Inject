@@ -4,16 +4,14 @@ using SourceBit.Inject.Tests.Data;
 
 namespace SourceBit.Inject.Tests
 {
-    public class CustomResolvingStrategyTests
+    public class CustomResolvingStrategyTests : UnitTest
     {
         [Test]
         public void Register_ForNotRegistredResolvingStrategy_ThrowResolvingStrategyNotFoundException()
         {
-            var container = new Container();
+            Container.Register<SimpleService, ISimpleService>().AsCustomResolvingStrategy();
 
-            container.Register<SimpleService, ISimpleService>().AsCustomResolvingStrategy();
-
-            var exception = Assert.Throws<ResolvingStrategyNotFoundException>(() => container.Resolve<ISimpleService>());
+            var exception = Assert.Throws<ResolvingStrategyNotFoundException>(() => Container.Resolve<ISimpleService>());
 
             Assert.That(exception.Message, Is.EqualTo("Resolving strategy '255' is not registred in container."));
         }

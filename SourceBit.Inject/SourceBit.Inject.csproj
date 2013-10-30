@@ -31,20 +31,27 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Compile Include="Activator.cs" />
+    <Compile Include="Container.Register.Assemblies.cs" />
+    <Compile Include="Container.Register.Types.cs" />
+    <Compile Include="Container.Register.Type.cs" />
+    <Compile Include="Container.Resolve.cs" />
+    <Compile Include="Container.Activator.cs" />
+    <Compile Include="RegistrationStrategies\AssembliesRegistration.cs" />
     <Compile Include="Container.cs" />
     <Compile Include="Exceptions\InstanceNotRegisteredException.cs" />
     <Compile Include="Exceptions\ResolvingStrategyNotFoundException.cs" />
+    <Compile Include="IAssembliesRegistration.cs" />
     <Compile Include="IContainer.cs" />
-    <Compile Include="IRegistration.cs" />
+    <Compile Include="ITypeRegistration.cs" />
     <Compile Include="ResolvingStrategies\IResolvingStrategy.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="..\SolutionInfo.cs">
       <Link>Properties\SolutionInfo.cs</Link>
     </Compile>
-    <Compile Include="Registration.cs" />
+    <Compile Include="RegistrationStrategies\TypeRegistration.cs" />
     <Compile Include="ResolvingStrategies\PerDependencyResolvingStrategy.cs" />
     <Compile Include="ResolvingStrategies\SingleInstanceResolvingStrategy.cs" />
+    <Compile Include="TypeDetails.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="System" />

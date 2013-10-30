@@ -1,7 +1,9 @@
-﻿namespace SourceBit.Inject.ResolvingStrategies
+﻿using System;
+
+namespace SourceBit.Inject.ResolvingStrategies
 {
     public interface IResolvingStrategy
     {
-        object Resolve(Registration registration);
+        object Resolve(Type instanceType, Func<object> createInstance);
     }
 }

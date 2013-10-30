@@ -1,5 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
+using System.Collections;
 
 namespace SourceBit.Inject.ResolvingStrategies
 {
@@ -7,26 +7,24 @@ namespace SourceBit.Inject.ResolvingStrategies
     {
         private static readonly object LockObject = new object();
 
-        private readonly IDictionary<Type, object> _intances;
+        private readonly Hashtable _intances;
 
         public SingleInstanceResolvingStrategy()
         {
-            _intances = new Dictionary<Type, object>();
+            _intances = new Hashtable();
         }
 
-        public object Resolve(Registration registration)
+        public object Resolve(Type instanceType, Func<object> createInstance)
         {
-            object instance;
-
-            _intances.TryGetValue(registration.Type, out instance);
+            object instance = _intances[instanceType];
 
             if (instance == null)
             {
-                instance = registration.CreateInstance();
+                instance = createInstance();
 
                 lock (LockObject)
                 {
-                    _intances[registration.Type] = instance;
+                    _intances[instanceType] = instance;
                 }
             }
 

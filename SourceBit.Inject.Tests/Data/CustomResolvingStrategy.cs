@@ -1,13 +1,14 @@
-﻿namespace SourceBit.Inject.Tests.Data
+﻿using SourceBit.Inject.RegistrationStrategies;
+
+namespace SourceBit.Inject.Tests.Data
 {
     public static class CustomResolvingStrategy
     {
-        public static void AsCustomResolvingStrategy(this IRegistration registration)
+        public static void AsCustomResolvingStrategy(this ITypeRegistration typeRegistration)
         {
-            var currentItemRegistration = registration as Registration;
+            var currentItemRegistration = typeRegistration as TypeRegistration;
 
-            currentItemRegistration.ResolvingStrategyType = byte.MaxValue;
-            currentItemRegistration.Register(currentItemRegistration);
+            currentItemRegistration.Container.Register(currentItemRegistration, byte.MaxValue);
         }
     }
 }

@@ -1,10 +1,12 @@
-﻿namespace SourceBit.Inject.ResolvingStrategies
+﻿using System;
+
+namespace SourceBit.Inject.ResolvingStrategies
 {
     internal class PerDependencyResolvingStrategy : IResolvingStrategy
     {
-        public object Resolve(Registration registration)
+        public object Resolve(Type instanceType, Func<object> createInstance)
         {
-            object instance = registration.CreateInstance();
+            object instance = createInstance();
 
             return instance;
         }

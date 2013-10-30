@@ -1,11 +1,9 @@
 ﻿namespace SourceBit.Inject
 {
-    public interface IRegistration
+    public interface ITypeRegistration
     {
         void AsSingleInstance();
 
         void AsPerDependencyInstance();
-
-        void AsPerThreadInstance();
     }
 }

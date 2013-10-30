@@ -1,35 +1,34 @@
-﻿using System;
-using System.Diagnostics;
-using Autofac;
+﻿using Autofac;
 using NUnit.Framework;
 using SourceBit.Inject.Tests.Data;
 
 namespace SourceBit.Inject.Tests
 {
-    public class PerformanceTests
+    public class PerformanceTests : UnitTest
     {
         [Test]
         public void Resolve_ForSingleInstance()
         {
             var container = new Container();
-
             container.Register<SimpleService, ISimpleService>().AsSingleInstance();
-
-            Measure(() =>
-            {
-                for (int i = 0; i < 10000000; i++)
-                {
-                    container.Resolve<ISimpleService>();
-                }
-            });
 
             var conainerbuilder = new ContainerBuilder();
             conainerbuilder.RegisterType<SimpleService>().As<ISimpleService>().SingleInstance();
             var autofacContainer = conainerbuilder.Build();
 
+            int numberOfTimes = 100000;
+
             Measure(() =>
             {
-                for (int i = 0; i < 10000000; i++)
+                for (int i = 0; i < numberOfTimes; i++)
+                {
+                    container.Resolve<ISimpleService>();
+                }
+            });
+
+            Measure(() =>
+            {
+                for (int i = 0; i < numberOfTimes; i++)
                 {
                     autofacContainer.Resolve<ISimpleService>();
                 }
@@ -40,42 +39,29 @@ namespace SourceBit.Inject.Tests
         public void Resolve_ForPerDependencyInstance()
         {
             var container = new Container();
-
             container.Register<SimpleService, ISimpleService>().AsPerDependencyInstance();
-
-            Measure(() =>
-            {
-                for (int i = 0; i < 1000000; i++)
-                {
-                    container.Resolve<ISimpleService>();
-                }
-            });
 
             var conainerbuilder = new ContainerBuilder();
             conainerbuilder.RegisterType<SimpleService>().As<ISimpleService>().InstancePerDependency();
             var autofacContainer = conainerbuilder.Build();
 
+            int numberOfTimes = 10000;
+
             Measure(() =>
             {
-                for (int i = 0; i < 1000000; i++)
+                for (int i = 0; i < numberOfTimes; i++)
+                {
+                    container.Resolve<ISimpleService>();
+                }
+            });
+
+            Measure(() =>
+            {
+                for (int i = 0; i < numberOfTimes; i++)
                 {
                     autofacContainer.Resolve<ISimpleService>();
                 }
             });
-        }
-        
-
-        private void Measure(Action action)
-        {
-            var stopwatch = new Stopwatch();
-
-            stopwatch.Start();
-
-            action();
-
-            stopwatch.Stop();
-
-            Console.WriteLine(stopwatch.Elapsed);
         }
     }
 }

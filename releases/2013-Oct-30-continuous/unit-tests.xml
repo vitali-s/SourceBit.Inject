@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<!--This file represents the results of running a test suite-->
+<test-results name="D:\Projects\github\SourceBit.Inject\SourceBit.Inject.Tests\bin\Release\SourceBit.Inject.Tests.dll" total="29" errors="0" failures="0" not-run="0" inconclusive="0" ignored="0" skipped="0" invalid="0" date="2013-10-30" time="23:13:13">
+  <environment nunit-version="2.6.3.13283" clr-version="2.0.50727.5472" os-version="Microsoft Windows NT 6.1.7601 Service Pack 1" platform="Win32NT" cwd="D:\Projects\github\SourceBit.Inject\SourceBit.Inject.BuildScripts" machine-name="EPBYMINW0989" user="Vitali_Shcharbin" user-domain="MINSK" />
+  <culture-info current-culture="en-US" current-uiculture="en-US" />
+  <test-suite type="Assembly" name="D:\Projects\github\SourceBit.Inject\SourceBit.Inject.Tests\bin\Release\SourceBit.Inject.Tests.dll" executed="True" result="Success" success="True" time="0.997" asserts="0">
+    <results>
+      <test-suite type="Namespace" name="SourceBit" executed="True" result="Success" success="True" time="0.975" asserts="0">
+        <results>
+          <test-suite type="Namespace" name="Inject" executed="True" result="Success" success="True" time="0.975" asserts="0">
+            <results>
+              <test-suite type="Namespace" name="Tests" executed="True" result="Success" success="True" time="0.975" asserts="0">
+                <results>
+                  <test-suite type="TestFixture" name="AssemblyRegistrationTests" executed="True" result="Success" success="True" time="0.235" asserts="0">
+                    <results>
+                      <test-case name="SourceBit.Inject.Tests.AssemblyRegistrationTests.Register_ForAllTypesInTestingAssebmly_ResolveGenericService" executed="True" result="Success" success="True" time="0.091" asserts="1" />
+                      <test-case name="SourceBit.Inject.Tests.AssemblyRegistrationTests.Register_ForAllTypesInTestingAssebmly_ResolveSimpleService" executed="True" result="Success" success="True" time="0.002" asserts="1" />
+                    </results>
+                  </test-suite>
+                  <test-suite type="TestFixture" name="ContainerTests" executed="True" result="Success" success="True" time="0.021" asserts="0">
+                    <results>
+                      <test-case name="SourceBit.Inject.Tests.ContainerTests.CreateContainer_ForNewContainer_ReturnTheInstanceOfIContainer" executed="True" result="Success" success="True" time="0.001" asserts="1" />
+                      <test-case name="SourceBit.Inject.Tests.ContainerTests.Resolve_ForNotRegistredInstanceUsingGenericParameter_ThrowException" executed="True" result="Success" success="True" time="0.013" asserts="2" />
+                      <test-case name="SourceBit.Inject.Tests.ContainerTests.Resolve_ForNotRegistredInstanceUsingTypeParameter_ThrowException" executed="True" result="Success" success="True" time="0.001" asserts="2" />
+                    </results>
+                  </test-suite>
+                  <test-suite type="TestFixture" name="CustomResolvingStrategyTests" executed="True" result="Success" success="True" time="0.003" asserts="0">
+                    <results>
+                      <test-case name="SourceBit.Inject.Tests.CustomResolvingStrategyTests.Register_ForNotRegistredResolvingStrategy_ThrowResolvingStrategyNotFoundException" executed="True" result="Success" success="True" time="0.002" asserts="2" />
+                    </results>
+                  </test-suite>
+                  <test-suite type="TestFixture" name="InstantiationTests" executed="True" result="Success" success="True" time="0.009" asserts="0">
+                    <results>
+                      <test-case name="SourceBit.Inject.Tests.InstantiationTests.CreateActivator_ForDefinedGenericType_CorrectInstanceOfThatType" executed="True" result="Success" success="True" time="0.001" asserts="1" />
+                      <test-case name="SourceBit.Inject.Tests.InstantiationTests.CreateActivator_ForDefinedMultipleGenericType_CorrectInstanceOfThatType" executed="True" result="Success" success="True" time="0.001" asserts="1" />
+                      <test-case name="SourceBit.Inject.Tests.InstantiationTests.CreateActivator_ForOpenGenericType_ThrowAnException" executed="True" result="Success" success="True" time="0.002" asserts="2" />
+                      <test-case name="SourceBit.Inject.Tests.InstantiationTests.CreateActivator_ForPlainType_ReturnInstanceOfThatType" executed="True" result="Success" success="True" time="0.001" asserts="1" />
+                    </results>
+                  </test-suite>
+                  <test-suite type="TestFixture" name="PerDependencyResolvingStrategyTests" executed="True" result="Success" success="True" time="0.031" asserts="0">
+                    <results>
+                      <test-case name="SourceBit.Inject.Tests.PerDependencyResolvingStrategyTests.Resolve_ForGenericInterface_ReturnGenericImplementations" executed="True" result="Success" success="True" time="0.002" asserts="1" />
+                      <test-case name="SourceBit.Inject.Tests.PerDependencyResolvingStrategyTests.Resolve_ForGenericServiceWithDependency_ReturnTheService" executed="True" result="Success" success="True" time="0.001" asserts="1" />
+                      <test-case name="SourceBit.Inject.Tests.PerDependencyResolvingStrategyTests.Resolve_ForInstanceRegisteredAsSingleInstanceUsignGenericParameter_ReturnInstance" executed="True" result="Success" success="True" time="0.011" asserts="1" />
+                      <test-case name="SourceBit.Inject.Tests.PerDependencyResolvingStrategyTests.Resolve_ForInstanceRegisteredAsSingleInstanceUsignTypeParameter_ReturnInstance" executed="True" result="Success" success="True" time="0.003" asserts="1" />
+                      <test-case name="SourceBit.Inject.Tests.PerDependencyResolvingStrategyTests.Resolve_ForMultipleTimesAndInstanceRegisteredAsSingleInstanceUsignGenericParameter_ReturnTheSameInstance" executed="True" result="Success" success="True" time="0.005" asserts="1" />
+                      <test-case name="SourceBit.Inject.Tests.PerDependencyResolvingStrategyTests.Resolve_ForOpenGenericServiceWithDependency_ReturnTheService" executed="True" result="Success" success="True" time="0.001" asserts="1" />
+                      <test-case name="SourceBit.Inject.Tests.PerDependencyResolvingStrategyTests.Resolve_ForSimpleServiceWithDependency_ReturnTheService" executed="True" result="Success" success="True" time="0.001" asserts="1" />
+                    </results>
+                  </test-suite>
+                  <test-suite type="TestFixture" name="PerformanceTests" executed="True" result="Success" success="True" time="0.540" asserts="0">
+                    <results>
+                      <test-case name="SourceBit.Inject.Tests.PerformanceTests.Resolve_ForPerDependencyInstance" executed="True" result="Success" success="True" time="0.434" asserts="0" />
+                      <test-case name="SourceBit.Inject.Tests.PerformanceTests.Resolve_ForSingleInstance" executed="True" result="Success" success="True" time="0.103" asserts="0" />
+                    </results>
+                  </test-suite>
+                  <test-suite type="TestFixture" name="SingleInstanceResolvingStrategyTests" executed="True" result="Success" success="True" time="0.118" asserts="0">
+                    <results>
+                      <test-case name="SourceBit.Inject.Tests.SingleInstanceResolvingStrategyTests.Register_ForMultipleTimesFromDifferentThreads_WithoutErrors" executed="True" result="Success" success="True" time="0.006" asserts="0" />
+                      <test-case name="SourceBit.Inject.Tests.SingleInstanceResolvingStrategyTests.Register_ForTheSameInstanceMultipleTimes_DoNotThrowAnException" executed="True" result="Success" success="True" time="0.075" asserts="0" />
+                      <test-case name="SourceBit.Inject.Tests.SingleInstanceResolvingStrategyTests.Resolve_ForGenericInterface_ReturnGenericImplementations" executed="True" result="Success" success="True" time="0.001" asserts="1" />
+                      <test-case name="SourceBit.Inject.Tests.SingleInstanceResolvingStrategyTests.Resolve_ForGenericServiceWithDependency_ReturnTheService" executed="True" result="Success" success="True" time="0.001" asserts="1" />
+                      <test-case name="SourceBit.Inject.Tests.SingleInstanceResolvingStrategyTests.Resolve_ForInstanceRegisteredAsSingleInstanceUsignGenericParameter_ReturnInstance" executed="True" result="Success" success="True" time="0.001" asserts="1" />
+                      <test-case name="SourceBit.Inject.Tests.SingleInstanceResolvingStrategyTests.Resolve_ForInstanceRegisteredAsSingleInstanceUsignTypeParameter_ReturnInstance" executed="True" result="Success" success="True" time="0.001" asserts="1" />
+                      <test-case name="SourceBit.Inject.Tests.SingleInstanceResolvingStrategyTests.Resolve_ForMultipleTimesAndInstanceRegisteredAsSingleInstanceUsignGenericParameter_ReturnTheSameInstance" executed="True" result="Success" success="True" time="0.001" asserts="1" />
+                      <test-case name="SourceBit.Inject.Tests.SingleInstanceResolvingStrategyTests.Resolve_ForOpenGenericServiceWithDependency_ReturnTheService" executed="True" result="Success" success="True" time="0.002" asserts="1" />
+                      <test-case name="SourceBit.Inject.Tests.SingleInstanceResolvingStrategyTests.Resolve_ForSimpleServiceWithDependency_ReturnTheService" executed="True" result="Success" success="True" time="0.001" asserts="1" />
+                      <test-case name="SourceBit.Inject.Tests.SingleInstanceResolvingStrategyTests.Resovler_ForMultipleTimesFromDifferentThreads_WithoutErrors" executed="True" result="Success" success="True" time="0.001" asserts="0" />
+                    </results>
+                  </test-suite>
+                </results>
+              </test-suite>
+            </results>
+          </test-suite>
+        </results>
+      </test-suite>
+    </results>
+  </test-suite>
+</test-results>
