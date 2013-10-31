@@ -3,7 +3,7 @@ using System.Collections.Generic;
 
 namespace SourceBit.Inject
 {
-    public partial class Container
+    public sealed partial class Container
     {
         public void Register(Type implementation, Type[] asTypes, int lifeType)
         {

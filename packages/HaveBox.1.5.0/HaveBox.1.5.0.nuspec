@@ -1,0 +1,43 @@
+<?xml version="1.0"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2011/08/nuspec.xsd">
+  <metadata>
+    <id>HaveBox</id>
+    <version>1.5.0</version>
+    <title>HaveBox</title>
+    <authors>Christian Henrik Reich</authors>
+    <owners>Christian Henrik Reich</owners>
+    <licenseUrl>https://bitbucket.org/Have/havebox/raw/1b3e716ee118881a702d664fe805ecd5e5f057ee/LICENSE.txt</licenseUrl>
+    <projectUrl>http://www.havebox.net/</projectUrl>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <description>Amoung the fastest of IoC containers. Light weight, effective and easy to use.
+
+Features:
+1 interface to many implementations
+Auto IEnumerable
+Auto registration
+Auto-wiring
+Config Injection
+Container configuring through sub-configs
+Custom lifetime 
+Eager/Lazy Singletons
+Injection with in-memory assemblies
+Interception
+
+
+Supported Frameworks:
+.Net 3.5 
+.Net 4.0 
+.Net 4.5 
+Silverlight 4 
+Silverlight 5
+Windows Phone 7
+Windows Phone 8</description>
+    <releaseNotes />
+    <copyright>Copyright 2013 Christian Henrik Reich</copyright>
+    <language />
+    <tags>Dependency Injection IoC Silverlight Windows Phone HaveBox inversion of control</tags>
+    <references>
+      <reference file="HaveBox.dll" />
+    </references>
+  </metadata>
+</package>

@@ -16,6 +16,9 @@ namespace SourceBit.Inject.Tests
             conainerbuilder.RegisterType<SimpleService>().As<ISimpleService>().SingleInstance();
             var autofacContainer = conainerbuilder.Build();
 
+            var haveBoxContainer = new HaveBox.Container();
+            haveBoxContainer.Configure(config => config.For<ISimpleService>().Use<SimpleService>());
+
             int numberOfTimes = 100000;
 
             Measure(() =>
@@ -23,6 +26,14 @@ namespace SourceBit.Inject.Tests
                 for (int i = 0; i < numberOfTimes; i++)
                 {
                     container.Resolve<ISimpleService>();
+                }
+            });
+
+            Measure(() =>
+            {
+                for (int i = 0; i < numberOfTimes; i++)
+                {
+                    haveBoxContainer.GetInstance<ISimpleService>();
                 }
             });
 

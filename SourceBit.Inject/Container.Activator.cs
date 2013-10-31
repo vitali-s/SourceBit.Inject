@@ -5,7 +5,7 @@ using System.Reflection.Emit;
 
 namespace SourceBit.Inject
 {
-    public partial class Container
+    public sealed partial class Container
     {
         public delegate object Activator(params object[] args);
 

@@ -36,6 +36,9 @@
     <Compile Include="Container.Register.Type.cs" />
     <Compile Include="Container.Resolve.cs" />
     <Compile Include="Container.Activator.cs" />
+    <Compile Include="InjectAttribute.cs" />
+    <Compile Include="InjectType.cs" />
+    <Compile Include="LifeTypes.cs" />
     <Compile Include="RegistrationStrategies\AssembliesRegistration.cs" />
     <Compile Include="Container.cs" />
     <Compile Include="Exceptions\InstanceNotRegisteredException.cs" />

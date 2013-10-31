@@ -1,12 +1,9 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Reflection;
 using SourceBit.Inject.RegistrationStrategies;
 
 namespace SourceBit.Inject
 {
-    public partial class Container
+    public sealed partial class Container
     {
         public ITypeRegistration Register(Type type, params Type[] asTypes)
         {

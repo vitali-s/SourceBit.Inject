@@ -5,7 +5,7 @@ using SourceBit.Inject.ResolvingStrategies;
 
 namespace SourceBit.Inject
 {
-    public partial class Container
+    public sealed partial class Container
     {
         public TAbstraction Resolve<TAbstraction>() where TAbstraction : class
         {
@@ -33,9 +33,7 @@ namespace SourceBit.Inject
                 }
             }
 
-            IResolvingStrategy resolvingStrategy;
-
-            _resolvingStrategies.TryGetValue(typeDetails.StrategyType, out resolvingStrategy);
+            var resolvingStrategy = _resolvingStrategies[typeDetails.StrategyType] as IResolvingStrategy;
 
             if (resolvingStrategy == null)
             {

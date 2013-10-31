@@ -36,12 +36,12 @@ namespace SourceBit.Inject.RegistrationStrategies
 
         public void AsSingleInstance()
         {
-            _container.Register(this, 0);
+            _container.Register(this, (int)LifeTypes.Single);
         }
 
         public void AsPerDependencyInstance()
         {
-            _container.Register(this, 1);
+            _container.Register(this, (int)LifeTypes.PerDependency);
         }
     }
 }

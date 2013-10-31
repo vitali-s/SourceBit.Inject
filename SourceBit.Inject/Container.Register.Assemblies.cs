@@ -6,8 +6,97 @@ using SourceBit.Inject.RegistrationStrategies;
 
 namespace SourceBit.Inject
 {
-    public partial class Container
+    public sealed partial class Container
     {
+        public void RegisterByAttributes(params string[] assembliesNames)
+        {
+            int length = assembliesNames.Length;
+
+            var assemblies = new Assembly[length];
+
+            for (int index = 0; index < length; index++)
+            {
+                assemblies[index] = Assembly.Load(assembliesNames[index]);
+            }
+
+            RegisterByAttributes(assemblies);
+        }
+
+        public void RegisterByAttributes(params Assembly[] assemblies)
+        {
+            int length = assemblies.Length;
+
+            for (int index = 0; index < length; index++)
+            {
+                RegisterByAttributes(assemblies[index]);
+            }
+        }
+
+        public void RegisterByAttributes(Assembly assembly)
+        {
+            Type[] types = assembly.GetTypes();
+
+            int length = types.Length;
+
+            for (int index = 0; index < length; index++)
+            {
+                var type = types[index];
+
+                if (!type.IsClass)
+                {
+                    continue;
+                }
+
+                if (type.IsAbstract)
+                {
+                    continue;
+                }
+
+                object[] attributes = type.GetCustomAttributes(typeof(InjectAttribute), true);
+
+                if (attributes.Length != 1)
+                {
+                    continue;
+                }
+
+                var injectAttribute = attributes[0] as InjectAttribute;
+
+                RegisterByAttribute(type, injectAttribute);
+            }
+        }
+
+        public void RegisterByAttribute(Type type, InjectAttribute attribute)
+        {
+            var interfaces = new Type[] { };
+
+            // Get as types
+            if (attribute.InjectType == InjectType.AsInterface)
+            {
+                interfaces = type.GetInterfaces().Except(type.BaseType.GetInterfaces()).ToArray();
+
+                if (interfaces.Length > 1)
+                {
+                    interfaces = interfaces.Except(interfaces.SelectMany(t => t.GetInterfaces())).ToArray();
+                }
+
+                if (interfaces.Length == 0)
+                {
+                    interfaces = type.BaseType.GetInterfaces();
+                }
+            }
+            else if (attribute.InjectType == InjectType.AsSelf)
+            {
+                interfaces = new[] { type };
+            }
+
+            if (interfaces.Length == 0)
+            {
+                throw new Exception();
+            }
+
+            Register(type, interfaces, (int)attribute.LifeType);
+        }
+
         public IAssembliesRegistration Register(params Assembly[] assemblies)
         {
             var assembliesRegistration = new AssembliesRegistration(this, assemblies);
@@ -45,7 +134,7 @@ namespace SourceBit.Inject
 
             for (int index = 0; index < typesCount; index++)
             {
-                Register(types[index], 0);
+                Register(types[index], lifeType);
             }
         }
 
@@ -56,7 +145,7 @@ namespace SourceBit.Inject
             Register(type, abstractions, lifeType);
         }
 
-        protected virtual Type[] GetInterfacesForInjection(Type type)
+        private Type[] GetInterfacesForInjection(Type type)
         {
             Type[] interfaces = type.GetInterfaces().Except(type.BaseType.GetInterfaces()).ToArray();
 
