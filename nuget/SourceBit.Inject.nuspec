@@ -1,0 +1,18 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
+    <metadata>
+        <id>SourceBit.Inject</id>
+        <version>0.0.0.1</version>
+        <title>Dependency Injection container</title>
+        <authors>Vitali Shcharbin</authors>
+        <owners>Vitali Shcharbin</owners>
+        <projectUrl>https://github.com/vitalishcharbin/SourceBit.Inject</projectUrl>
+        <requireLicenseAcceptance>false</requireLicenseAcceptance>
+        <description>Simple and fast dependency injection container.</description>
+        <tags>Dependency Injection Inversion of Control DI IoC</tags>
+        <language />
+    </metadata>
+    <files>
+        <file src="lib\SourceBit.Inject.dll" target="" /> 
+    </files>
+</package>

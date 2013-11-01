@@ -15,9 +15,11 @@ Properties {
     $nugetPackagePath = "$baseDir\$nugetPackageDir"
     #nunit
     $nunitConsole = "$packagesDir\NUnit.2.6.3-complete\nunit-console.exe"
+	#nuget
+	$nugetpath = "$packagesDir\nuget\nuget.exe"
 }
 
-Task Default -Depends Clean, Compile, Unit-Test
+Task Default -Depends Clean, Compile, Unit-Test, Nuget-Update, Nuget-Pack, Nuget-CopyPackage, Nuget-Publish
 
 Task Clean {
 
@@ -63,6 +65,28 @@ Task Unit-Test {
             & $nunitConsole $assemblyPath
         }
     }
+}
+
+Task Nuget-Update {
+    & $nugetpath "Update", "-self"
+}
+
+Task Nuget-Pack {
+    & $nugetpath "Pack", "$baseDir\nuget\SourceBit.Inject.nuspec"
+}
+
+Task Nuget-CopyPackage {
+    Move-Item "$currentDir\*.nupkg" "$baseDir\releases\" -force
+}
+
+Task Nuget-Publish {
+	Get-Content "$baseDir\..\nuget.key" | Foreach-Object{
+	   $apiKey = $_
+	}
+
+    & $nugetpath "SetApiKey", "$apiKey"
+
+    & $nugetpath "Push", "$baseDir\releases\SourceBit.Inject.0.0.0.1.nupkg"
 }
 
 function Get-Projects-Info
