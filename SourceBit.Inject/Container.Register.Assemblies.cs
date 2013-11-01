@@ -94,6 +94,16 @@ namespace SourceBit.Inject
                 throw new Exception();
             }
 
+            for (int index = 0; index < interfaces.Length; index++)
+            {
+                var interfaceType = interfaces[index];
+
+                if (interfaceType.IsInterface && interfaceType.IsGenericType)
+                {
+                    interfaces[index] = interfaceType.GetGenericTypeDefinition();
+                }
+            }
+
             Register(type, interfaces, (int)attribute.LifeType);
         }
 

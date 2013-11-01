@@ -17,6 +17,11 @@ namespace SourceBit.Inject
             _injectType = injectType;
         }
 
+        public InjectAttribute(InjectType injectType)
+            : this(LifeTypes.Single, InjectType.AsSelf)
+        {
+        }
+
         public InjectType InjectType
         {
             get { return _injectType; }
